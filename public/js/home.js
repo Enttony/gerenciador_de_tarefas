@@ -1,6 +1,6 @@
 var butao = document.getElementById('button_butao')
 
-butao.addEventListener("click",async function(e){
+butao.addEventListener("adicionar",async function(e){
     e.preventDefault()
 
 
@@ -28,9 +28,33 @@ butao.addEventListener("click",async function(e){
 
     }
     
+
+    
     
 
 })
+
+
+const h1 = document.querySelector('h1')
+h1.setAttribute('data-text', h1.textContent)
+
+function triggerGlitch() {
+    h1.classList.remove('glitching')
+    void h1.offsetWidth
+    h1.classList.add('glitching')
+    setTimeout(() => h1.classList.remove('glitching'), 400)
+
+}
+
+
+window.addEventListener('load', () => {
+    setTimeout(triggerGlitch, 500)
+
+})
+
+h1.addEventListener('click', triggerGlitch)
+
+
 
 
 
